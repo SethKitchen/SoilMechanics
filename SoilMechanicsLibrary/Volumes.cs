@@ -46,11 +46,13 @@ namespace SoilMechanicsLibrary
         CubicMeters,
         [Description("cc")]
         CubicCentimeters,
+        [Description("ft^3")]
+        CubicFeet,
     }
 
     public class TotalVolume : BaseVolumeScalar
     {
-        public TotalVolume(double numericalValue, VolumeUnits units) : base("V_v", numericalValue, units)
+        public TotalVolume(double numericalValue, VolumeUnits units) : base("V", numericalValue, units)
         {
 
         }
@@ -59,12 +61,25 @@ namespace SoilMechanicsLibrary
         {
 
         }
+
+        public TotalVolume(Porosity porosity, VolumeOfVoids voidVolume, VolumeUnits units): this(BaseVolumeScalar.ConvertToUnits(voidVolume, units).m_NumericValue/porosity.m_NumericValue, units) {
+
+        }
     }
 
     public class VolumeOfSolidMatter : BaseVolumeScalar
     {
         public VolumeOfSolidMatter(double numericalValue, VolumeUnits units) : base("V_s", numericalValue, units)
         {
+
+        }
+
+        public VolumeOfSolidMatter(VolumeOfVoids voidVolume, TotalVolume totalVolume, VolumeUnits units) : this(ConvertToUnits(totalVolume, units).m_NumericValue - ConvertToUnits(voidVolume, units).m_NumericValue, units)
+        {
+
+        }
+
+        public VolumeOfSolidMatter(VoidRatio voidRatio, VolumeOfVoids voidVolume, VolumeUnits units): this(BaseVolumeScalar.ConvertToUnits(voidVolume, units).m_NumericValue / voidRatio.m_NumericValue, units) {
 
         }
     }
@@ -80,6 +95,23 @@ namespace SoilMechanicsLibrary
         {
 
         }
+
+        public VolumeOfVoids(VolumeOfSolidMatter solidVolume, TotalVolume totalVolume, VolumeUnits units) : this(ConvertToUnits(totalVolume, units).m_NumericValue - ConvertToUnits(solidVolume, units).m_NumericValue, units)
+        {
+
+        }
+
+        public VolumeOfVoids(Porosity porosity, TotalVolume totalVolume, VolumeUnits units): this(BaseVolumeScalar.ConvertToUnits(totalVolume, units).m_NumericValue*porosity.m_NumericValue, units) {
+
+        }
+
+        public VolumeOfVoids(VoidRatio voidRatio, VolumeOfSolidMatter solidVolume, VolumeUnits units): this(BaseVolumeScalar.ConvertToUnits(solidVolume, units).m_NumericValue*voidRatio.m_NumericValue, units) {
+
+        }
+
+        public VolumeOfVoids(DegreeOfSaturation degreeOfSaturation, WaterVolume waterVolume, VolumeUnits units): this(BaseVolumeScalar.ConvertToUnits(waterVolume, units).m_NumericValue/degreeOfSaturation.m_NumericValue, units) {
+
+        }
     }
 
     public class WaterVolume : BaseVolumeScalar
@@ -88,11 +120,26 @@ namespace SoilMechanicsLibrary
         {
 
         }
+
+         public WaterVolume(VolumeOfVoids voidVolume, GasVolume gasVolume, VolumeUnits units) : this(ConvertToUnits(voidVolume, units).m_NumericValue - ConvertToUnits(gasVolume, units).m_NumericValue, units)
+        {
+
+        }
+
+        public WaterVolume(DegreeOfSaturation degreeOfSaturation, VolumeOfVoids voidVolume, VolumeUnits units) : this(ConvertToUnits(voidVolume, units).m_NumericValue * degreeOfSaturation.m_NumericValue, units)
+        {
+
+        }
     }
 
     public class GasVolume : BaseVolumeScalar
     {
         public GasVolume(double numericalValue, VolumeUnits units) : base("V_g", numericalValue, units)
+        {
+
+        }
+
+        public GasVolume(VolumeOfVoids voidVolume, WaterVolume waterVolume, VolumeUnits units) : this(ConvertToUnits(voidVolume, units).m_NumericValue - ConvertToUnits(waterVolume, units).m_NumericValue, units)
         {
 
         }

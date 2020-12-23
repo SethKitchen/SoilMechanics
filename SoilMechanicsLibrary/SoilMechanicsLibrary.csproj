@@ -2,6 +2,33 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>SoilMechanics</PackageId>
+    <PackageVersion>1.0</PackageVersion>
+    <Authors>Seth Kitchen</Authors>
+    <Copyright>Seth Kitchen, 2020-2021</Copyright>
+    <PackageIconUrl>https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.flaticon.com%2Fpremium-icon%2Fsoil_781514&amp;psig=AOvVaw1onn8NKFLTSJyx3H5pvRKF&amp;ust=1608782848704000&amp;source=images&amp;cd=vfe&amp;ved=0CAIQjRxqFwoTCMiB3aSd4-0CFQAAAAAdAAAAABAD</PackageIconUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseUrl>MIT</PackageLicenseUrl>
+    <Owners>Seth Kitchen</Owners>
+    <PackageProjectUrl>https://github.com/SethKitchen/SoilMechanics</PackageProjectUrl>
+    <PackageReleaseNotes>Chapter 1 complete  - Volumes, Weights, Specific Gravity, </PackageReleaseNotes>
+    <Summary>Engineering C# .NET Library for analyzing the ground beneath your feet! Follows "Fundamentals of Soil Mechanics" by the late Donald W. Taylor, MIT, 1962</Summary>
+    <PackageTags>volume, weight, gravity, soil, dirt, ground, mechanics, engineering, engineer, toolbox, MIT</PackageTags>
+    <Title>Soil Mechanics</Title>
+    <Description>Engineering C# .NET Library for analyzing the ground beneath your feet! Follows "Fundamentals of Soil Mechanics" by the late Donald W. Taylor, MIT, 1962</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Shared\" />
+    <Folder Include="SpecificGravity\" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
 </Project>

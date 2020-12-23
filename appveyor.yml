@@ -12,9 +12,6 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
   
-install:
-- cmd: choco install soilmechanics
-  
 before_build:
 - cmd: dotnet --version
 

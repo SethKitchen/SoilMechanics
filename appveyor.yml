@@ -1,0 +1,40 @@
+version: 1.0.{build}
+os: Visual Studio 2017
+configuration: Release
+environment:
+  clone_folder: c:\soil
+  GITHUB_REPO_TOKEN:
+    secure: 2d5d933e28cda6e1815d25ef861f338d5ab93a7e	
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+  
+install:
+- cmd: choco install soilmechanics
+  
+before_build:
+- cmd: dotnet --version
+
+build_script:
+# Cake.
+- ps: .\build.ps1
+
+after_build:
+# Build the GeneticSharp and GeneticSharp.Extensions NuGet packages.
+- cmd: buildLibrariesNuget.cmd
+
+# Build the GeneticSharp.Templates NuGet package.
+- cmd: buildTemplatesNuget.cmd
+
+# Tests are executed by Cake.
+test: off
+
+artifacts:
+  - path: .\src\nuget\*.nupkg
+    name: Libraries NuGet packages
+
+  - path: .\src\Templates\*.nupkg
+    name: Templates NuGet package

@@ -5,12 +5,14 @@ environment:
   clone_folder: c:\soil
   GITHUB_REPO_TOKEN:
     secure: 2d5d933e28cda6e1815d25ef861f338d5ab93a7e	
-assembly_info:
+dotnet_csproj:
   patch: true
-  file: '**\AssemblyInfo.*'
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
   assembly_version: '{version}'
-  assembly_file_version: '{version}'
-  assembly_informational_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
   
 before_build:
 - cmd: dotnet --version
@@ -20,11 +22,8 @@ build_script:
 - ps: .\build.ps1
 
 after_build:
-# Build the GeneticSharp and GeneticSharp.Extensions NuGet packages.
+# Build the SoilMechanics and SoilMechanics.Extensions NuGet packages.
 - cmd: buildLibrariesNuget.cmd
-
-# Build the GeneticSharp.Templates NuGet package.
-- cmd: buildTemplatesNuget.cmd
 
 # Tests are executed by Cake.
 test: off
@@ -32,6 +31,3 @@ test: off
 artifacts:
   - path: .\src\nuget\*.nupkg
     name: Libraries NuGet packages
-
-  - path: .\src\Templates\*.nupkg
-    name: Templates NuGet package

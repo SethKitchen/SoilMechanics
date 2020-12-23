@@ -3,7 +3,7 @@
 #addin nuget:?package=Cake.Git&version=0.19.0
 
 var target = Argument("target", "Default");
-var solutionDir = "src";
+var solutionDir = ".";
 var sonarLogin = EnvironmentVariable("SoilMechanics_SonarQube_login");
 var branch = EnvironmentVariable("APPVEYOR_REPO_BRANCH") ?? GitBranchCurrent(".").FriendlyName;
 

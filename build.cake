@@ -1,5 +1,5 @@
 #tool nuget:?package=MSBuild.SonarQube.Runner.Tool&version=4.8.0
-#addin nuget:?package=Cake.Sonar&version=1.1.22
+#addin nuget:?package=Cake.Sonar&version=1.1.25
 #addin nuget:?package=Cake.Git&version=0.22.0
 
 var target = Argument("target", "Default");

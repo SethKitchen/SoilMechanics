@@ -29,5 +29,5 @@ after_build:
 test: off
 
 artifacts:
-  - path: C:\projects\nuget\*.nupkg
+  - path: ..\nuget\*.nupkg
     name: Libraries NuGet packages

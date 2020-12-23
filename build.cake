@@ -41,7 +41,7 @@ Task("SonarBegin")
     SonarBegin(new SonarBeginSettings {
         Key = "SoilMechanics",
         Branch = branch,
-        Organization = "Seth Kitchen",
+        Organization = "sethkitchen",
         Url = "https://sonarcloud.io",
         Exclusions = "SoilMechanics.Benchmarks/*.cs,**/*Test.cs,**/Samples/*.cs,SoilMechanics.Runner.App/MainWindow.cs,SoilMechanics.Runner.App/PropertyEditor.cs,**/*.xml,**/Program.cs,**/AssemblyInfo.cs",
         OpenCoverReportsPath = "**/*.opencover.xml",

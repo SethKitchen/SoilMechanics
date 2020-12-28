@@ -43,7 +43,7 @@ Task("SonarBegin")
         Branch = branch,
         Organization = "sethkitchen",
         Url = "https://sonarcloud.io",
-        Exclusions = "SoilMechanics.Benchmarks/*.cs,**/*Test.cs,**/Samples/*.cs,SoilMechanics.Runner.App/MainWindow.cs,SoilMechanics.Runner.App/PropertyEditor.cs,**/*.xml,**/Program.cs,**/AssemblyInfo.cs",
+        Exclusions = "",
         OpenCoverReportsPath = "**/*.opencover.xml",
         Login = sonarLogin   
      });

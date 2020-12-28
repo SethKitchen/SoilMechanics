@@ -1,4 +1,4 @@
-﻿// <copyright file="SPECIFIC_GRAVITY_NOMINAL_SOIL_MAXIMUM.cs" company="Seth Kitchen">
+﻿// <copyright file="SpecificGravityNominalSoilMaximum.cs" company="Seth Kitchen">
 // Copyright (c) Seth Kitchen 2020-2021. All rights reserved.
 // </copyright>
 
@@ -9,12 +9,12 @@ namespace SoilMechanicsLibrary.SpecificGravity
     /// <summary>
     /// pg. 15 "... for the majority of soils [specific gravity] value falls between ... and 2.85.
     /// </summary>
-    public class SPECIFIC_GRAVITY_NOMINAL_SOIL_MAXIMUM : BaseScalar
+    public class SpecificGravityNominalSoilMaximum : BaseScalar
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SPECIFIC_GRAVITY_NOMINAL_SOIL_MAXIMUM"/> class.
+        /// Initializes a new instance of the <see cref="SpecificGravityNominalSoilMaximum"/> class.
         /// </summary>
-        public SPECIFIC_GRAVITY_NOMINAL_SOIL_MAXIMUM()
+        public SpecificGravityNominalSoilMaximum()
         {
             this.Symbol = "G_{soil_max}";
             this.NumericValue = 2.85;

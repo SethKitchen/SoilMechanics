@@ -23,13 +23,13 @@ namespace SoilMechanicsLibrary.SpecificGravity
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MassSpecificGravity"/> class. Uses <see cref="UNIT_WEIGHT_OF_WATER_AT_4_DEGREES_C" /> as reference.
+        /// Initializes a new instance of the <see cref="MassSpecificGravity"/> class. Uses <see cref="UnitWeightOfWaterAt4DegreesC" /> as reference.
         /// </summary>
         /// <param name="totalUnitWeight">Calculation for gamma_t/gamma_0.</param>
         public MassSpecificGravity(TotalUnitWeight totalUnitWeight)
         {
             this.Symbol = "G_m";
-            UNIT_WEIGHT_OF_WATER_AT_4_DEGREES_C referenceWeight = new UNIT_WEIGHT_OF_WATER_AT_4_DEGREES_C();
+            UnitWeightOfWaterAt4DegreesC referenceWeight = new UnitWeightOfWaterAt4DegreesC();
             this.NumericValue = totalUnitWeight.NumericValue / BaseUnitWeightScalar.ConvertToUnits(referenceWeight, totalUnitWeight.UnitOfMeasure).NumericValue;
         }
 

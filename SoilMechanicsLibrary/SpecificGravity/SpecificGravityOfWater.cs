@@ -23,13 +23,13 @@ namespace SoilMechanicsLibrary.SpecificGravity
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpecificGravityOfWater"/> class. Uses <see cref="UNIT_WEIGHT_OF_WATER_AT_4_DEGREES_C" /> as reference.
+        /// Initializes a new instance of the <see cref="SpecificGravityOfWater"/> class. Uses <see cref="UnitWeightOfWaterAt4DegreesC" /> as reference.
         /// </summary>
         /// <param name="waterUnitWeight">Calculation for gamma_w/gamma_0.</param>
         public SpecificGravityOfWater(UnitWeightOfWater waterUnitWeight)
         {
             this.Symbol = "G_w";
-            UNIT_WEIGHT_OF_WATER_AT_4_DEGREES_C referenceWeight = new UNIT_WEIGHT_OF_WATER_AT_4_DEGREES_C();
+            UnitWeightOfWaterAt4DegreesC referenceWeight = new UnitWeightOfWaterAt4DegreesC();
             this.NumericValue = waterUnitWeight.NumericValue / BaseUnitWeightScalar.ConvertToUnits(referenceWeight, waterUnitWeight.UnitOfMeasure).NumericValue;
         }
 

@@ -50,7 +50,7 @@ namespace SoilMechanicsLibrary.Weights
             }
             else if (toConvert.UnitOfMeasure == WeightUnits.Grams && toConvertTo == WeightUnits.Pounds)
             {
-                newVal /= 454.0;
+                newVal /= 453.592;
             }
             else if (toConvert.UnitOfMeasure == WeightUnits.Kilograms && toConvertTo == WeightUnits.Pounds)
             {
@@ -62,7 +62,7 @@ namespace SoilMechanicsLibrary.Weights
             }
             else if (toConvert.UnitOfMeasure == WeightUnits.Pounds && toConvertTo == WeightUnits.Grams)
             {
-                newVal *= 454.0;
+                newVal *= 453.592;
             }
             else if (toConvert.UnitOfMeasure == WeightUnits.Pounds && toConvertTo == WeightUnits.Kilograms)
             {

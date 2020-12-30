@@ -21,5 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SpecificGravity\" />
+    <Folder Include="UnitWeights\" />
   </ItemGroup>
 </Project>

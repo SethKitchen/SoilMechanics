@@ -28,6 +28,7 @@ Task("Test")
     {
         ArgumentCustomization = args => {
             return args.Append("/p:CollectCoverage=true")
+                       .Append("/p:IncludeTestAssembly=true")
                        .Append("/p:CoverletOutputFormat=opencover");
         }
     };

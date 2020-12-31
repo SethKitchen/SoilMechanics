@@ -24,5 +24,6 @@
     <Folder Include="UnitWeights\" />
     <Folder Include="Weights\" />
     <Folder Include="Volumes\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
 </Project>

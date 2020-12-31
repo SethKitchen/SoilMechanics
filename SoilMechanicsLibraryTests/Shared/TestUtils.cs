@@ -1,6 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 using SoilMechanicsLibrary.Shared;
+using SoilMechanicsLibrary.Volumes;
 
 namespace SoilMechanicsLibraryTests.Shared
 {
@@ -16,6 +17,19 @@ namespace SoilMechanicsLibraryTests.Shared
         {
             string d = Utils.GetDescription<string>(null);
             Assert.IsEmpty(d);
+        }
+
+        [Test]
+        public void DescriptionShouldReturnEmptyStringOnNoDescriptionEnum()
+        {
+            NoDescriptionEnumStub myEnum = NoDescriptionEnumStub.None;
+            string d = Utils.GetDescription(myEnum);
+            Assert.IsEmpty(d);
+        }
+
+        private enum NoDescriptionEnumStub
+        {
+            None,
         }
     }
 }

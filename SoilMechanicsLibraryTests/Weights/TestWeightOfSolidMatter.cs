@@ -27,7 +27,7 @@ namespace SoilMechanicsLibraryTests.Weights
         {
             WeightOfWater ww = new WeightOfWater(10, WeightUnits.Grams);
             TotalWeight tw = new TotalWeight(20, WeightUnits.Grams);
-            WeightOfSolidMatter wsm = new WeightOfSolidMatter(ww,tw, WeightUnits.Grams);
+            WeightOfSolidMatter wsm = new WeightOfSolidMatter(ww, tw, WeightUnits.Grams);
             String correctAnswer = "W_s = 10 g";
             Assert.AreEqual("W_s", wsm.Symbol);
             Assert.AreEqual(wsm.NumericValue, 10);
@@ -41,7 +41,7 @@ namespace SoilMechanicsLibraryTests.Weights
             WeightOfWater ww = new WeightOfWater(10, WeightUnits.Grams);
             TotalWeight tw = new TotalWeight(20, WeightUnits.Grams);
             WeightOfSolidMatter wsm = new WeightOfSolidMatter(ww, tw, WeightUnits.Kilograms);
-            Assert.AreEqual(Math.Round(wsm.NumericValue,2), .01);
+            Assert.AreEqual(Math.Round(wsm.NumericValue, 2), .01);
             Assert.AreEqual(wsm.UnitOfMeasure, WeightUnits.Kilograms);
         }
 
@@ -50,7 +50,7 @@ namespace SoilMechanicsLibraryTests.Weights
         {
             WeightOfWater ww = new WeightOfWater(10, WeightUnits.Grams);
             TotalWeight tw = new TotalWeight(20, WeightUnits.Grams);
-            WeightOfSolidMatter wsm = new WeightOfSolidMatter(ww,tw, WeightUnits.Pounds);
+            WeightOfSolidMatter wsm = new WeightOfSolidMatter(ww, tw, WeightUnits.Pounds);
             Assert.AreEqual(Math.Round(wsm.NumericValue, 3), 0.022);
             Assert.AreEqual(wsm.UnitOfMeasure, WeightUnits.Pounds);
         }

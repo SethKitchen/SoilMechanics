@@ -30,7 +30,7 @@ namespace SoilMechanicsLibraryTests.UnitWeights
             TotalWeight tw = new TotalWeight(10, WeightUnits.Grams);
             TotalVolume tv = new TotalVolume(10, VolumeUnits.CubicCentimeters);
             TotalUnitWeight tuw = new TotalUnitWeight(tw, tv, UnitWeightUnits.GramPerCubicCentimeter);
-            Assert.AreEqual(Math.Round(tuw.NumericValue,1), 1);
+            Assert.AreEqual(Math.Round(tuw.NumericValue, 1), 1);
             Assert.AreEqual(tuw.UnitOfMeasure, UnitWeightUnits.GramPerCubicCentimeter);
             Assert.AreEqual(tuw.Symbol, "𝛾_t");
         }
@@ -41,7 +41,7 @@ namespace SoilMechanicsLibraryTests.UnitWeights
             TotalWeight tw = new TotalWeight(10, WeightUnits.Grams);
             TotalVolume tv = new TotalVolume(10, VolumeUnits.CubicCentimeters);
             TotalUnitWeight tuw = new TotalUnitWeight(tw, tv, UnitWeightUnits.KilogramPerMeterCubed);
-            Assert.AreEqual(Math.Round(tuw.NumericValue,2), 1000);
+            Assert.AreEqual(Math.Round(tuw.NumericValue, 2), 1000);
             Assert.AreEqual(tuw.UnitOfMeasure, UnitWeightUnits.KilogramPerMeterCubed);
             Assert.AreEqual(tuw.Symbol, "𝛾_t");
         }
@@ -52,7 +52,7 @@ namespace SoilMechanicsLibraryTests.UnitWeights
             TotalWeight tw = new TotalWeight(10, WeightUnits.Grams);
             TotalVolume tv = new TotalVolume(10, VolumeUnits.CubicCentimeters);
             TotalUnitWeight tuw = new TotalUnitWeight(tw, tv, UnitWeightUnits.PoundPerCubicFoot);
-            Assert.AreEqual(Math.Round(tuw.NumericValue,2), 62.43);
+            Assert.AreEqual(Math.Round(tuw.NumericValue, 2), 62.43);
             Assert.AreEqual(tuw.UnitOfMeasure, UnitWeightUnits.PoundPerCubicFoot);
             Assert.AreEqual(tuw.Symbol, "𝛾_t"); ;
         }

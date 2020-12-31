@@ -28,7 +28,7 @@ namespace SoilMechanicsLibraryTests.Weights
             BaseWeightScalar bws = new BaseWeightScalar("x", 10, WeightUnits.Grams);
             BaseWeightScalar converted = BaseWeightScalar.ConvertToUnits(bws, WeightUnits.Kilograms);
             Assert.AreEqual("x", converted.Symbol);
-            Assert.AreEqual(Math.Round(converted.NumericValue,2), .01);
+            Assert.AreEqual(Math.Round(converted.NumericValue, 2), .01);
             Assert.AreEqual(converted.UnitOfMeasure, WeightUnits.Kilograms);
         }
 
@@ -38,7 +38,7 @@ namespace SoilMechanicsLibraryTests.Weights
             BaseWeightScalar bws = new BaseWeightScalar("x", 10, WeightUnits.Grams);
             BaseWeightScalar converted = BaseWeightScalar.ConvertToUnits(bws, WeightUnits.Pounds);
             Assert.AreEqual("x", converted.Symbol);
-            Assert.AreEqual(Math.Round(converted.NumericValue,3), 0.022);
+            Assert.AreEqual(Math.Round(converted.NumericValue, 3), 0.022);
             Assert.AreEqual(converted.UnitOfMeasure, WeightUnits.Pounds);
         }
 

@@ -45,7 +45,7 @@ namespace SoilMechanicsLibraryTests.Weights
             WeightOfWater ww = new WeightOfWater(10, WeightUnits.Grams);
             TotalWeight tw = new TotalWeight(wsm, ww, WeightUnits.Kilograms);
             Assert.AreEqual("W", tw.Symbol);
-            Assert.AreEqual(Math.Round(tw.NumericValue,2), .02);
+            Assert.AreEqual(Math.Round(tw.NumericValue, 2), .02);
             Assert.AreEqual(tw.UnitOfMeasure, WeightUnits.Kilograms);
         }
 

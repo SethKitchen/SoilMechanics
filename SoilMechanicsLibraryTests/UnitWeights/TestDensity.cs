@@ -25,8 +25,8 @@ namespace SoilMechanicsLibraryTests.UnitWeights
         public void Constructor2ShouldStoreAndPrintValueAndSymbolWithGramPerCubicCentimeter()
         {
             TotalUnitWeight tuw = new TotalUnitWeight(10, UnitWeightUnits.GramPerCubicCentimeter);
-            Density d = new Density(tuw,UnitWeightUnits.GramPerCubicCentimeter);
-            Assert.AreEqual(Math.Round(d.NumericValue,3), 1.019);
+            Density d = new Density(tuw, UnitWeightUnits.GramPerCubicCentimeter);
+            Assert.AreEqual(Math.Round(d.NumericValue, 3), 1.019);
             Assert.AreEqual(d.UnitOfMeasure, UnitWeightUnits.GramPerCubicCentimeter);
             Assert.AreEqual(d.Symbol, "ρ");
         }

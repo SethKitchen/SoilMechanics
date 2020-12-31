@@ -68,7 +68,7 @@ namespace SoilMechanicsLibraryTests.UnitWeights
             BaseUnitWeightScalar buws = new BaseUnitWeightScalar("x", 10, UnitWeightUnits.KilogramPerMeterCubed);
             BaseUnitWeightScalar converted = BaseUnitWeightScalar.ConvertToUnits(buws, UnitWeightUnits.PoundPerCubicFoot);
             Assert.AreEqual("x", converted.Symbol);
-            Assert.AreEqual(Math.Round(converted.NumericValue,3), 0.624);
+            Assert.AreEqual(Math.Round(converted.NumericValue, 3), 0.624);
             Assert.AreEqual(converted.UnitOfMeasure, UnitWeightUnits.PoundPerCubicFoot);
         }
 
@@ -88,7 +88,7 @@ namespace SoilMechanicsLibraryTests.UnitWeights
             BaseUnitWeightScalar buws = new BaseUnitWeightScalar("x", 10, UnitWeightUnits.PoundPerCubicFoot);
             BaseUnitWeightScalar converted = BaseUnitWeightScalar.ConvertToUnits(buws, UnitWeightUnits.KilogramPerMeterCubed);
             Assert.AreEqual("x", converted.Symbol);
-            Assert.AreEqual(Math.Round(converted.NumericValue,2), 160.18);
+            Assert.AreEqual(Math.Round(converted.NumericValue, 2), 160.18);
             Assert.AreEqual(converted.UnitOfMeasure, UnitWeightUnits.KilogramPerMeterCubed);
         }
 
@@ -98,7 +98,7 @@ namespace SoilMechanicsLibraryTests.UnitWeights
             BaseUnitWeightScalar buws = new BaseUnitWeightScalar("x", 10, UnitWeightUnits.PoundPerCubicFoot);
             BaseUnitWeightScalar converted = BaseUnitWeightScalar.ConvertToUnits(buws, UnitWeightUnits.GramPerCubicCentimeter);
             Assert.AreEqual("x", converted.Symbol);
-            Assert.AreEqual(Math.Round(converted.NumericValue,3), 0.160);
+            Assert.AreEqual(Math.Round(converted.NumericValue, 3), 0.160);
             Assert.AreEqual(converted.UnitOfMeasure, UnitWeightUnits.GramPerCubicCentimeter);
         }
 

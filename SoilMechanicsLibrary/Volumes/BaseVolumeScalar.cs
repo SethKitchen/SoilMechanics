@@ -50,15 +50,15 @@ namespace SoilMechanicsLibrary.Volumes
             }
             else if (toConvert.UnitOfMeasure == VolumeUnits.CubicCentimeters && toConvertTo == VolumeUnits.CubicFeet)
             {
-                newVal /= 28317;
+                newVal /= 28316.8199;
             }
             else if (toConvert.UnitOfMeasure == VolumeUnits.CubicFeet && toConvertTo == VolumeUnits.CubicCentimeters)
             {
-                newVal *= 28317;
+                newVal *= 28316.8199;
             }
             else if (toConvert.UnitOfMeasure == VolumeUnits.CubicFeet && toConvertTo == VolumeUnits.CubicMeters)
             {
-                newVal /= 35.315;
+                newVal /= 35.3147;
             }
             else if (toConvert.UnitOfMeasure == VolumeUnits.CubicMeters && toConvertTo == VolumeUnits.CubicCentimeters)
             {
@@ -66,7 +66,7 @@ namespace SoilMechanicsLibrary.Volumes
             }
             else if (toConvert.UnitOfMeasure == VolumeUnits.CubicMeters && toConvertTo == VolumeUnits.CubicFeet)
             {
-                newVal *= 35.315;
+                newVal *= 35.3147;
             }
 
             BaseVolumeScalar toReturn = new BaseVolumeScalar(toConvert.Symbol, newVal, toConvertTo);

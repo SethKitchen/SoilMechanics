@@ -15,18 +15,18 @@ namespace SoilMechanicsLibrary.Volumes
         /// m^3
         /// </summary>
         [Description("m^3")]
-        CubicMeters,
+        CubicMeters = 0,
 
         /// <summary>
         /// cc
         /// </summary>
         [Description("cc")]
-        CubicCentimeters,
+        CubicCentimeters = 1,
 
         /// <summary>
         /// ft^3
         /// </summary>
         [Description("ft^3")]
-        CubicFeet,
+        CubicFeet = 2,
     }
 }

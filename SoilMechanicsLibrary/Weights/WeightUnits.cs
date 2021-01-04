@@ -15,18 +15,18 @@ namespace SoilMechanicsLibrary.Weights
         /// kg
         /// </summary>
         [Description("kg")]
-        Kilograms,
+        Kilograms = 0,
 
         /// <summary>
         /// g
         /// </summary>
         [Description("g")]
-        Grams,
+        Grams = 1,
 
         /// <summary>
         /// lb
         /// </summary>
         [Description("lb")]
-        Pounds,
+        Pounds = 2,
     }
 }

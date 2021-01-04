@@ -15,18 +15,18 @@ namespace SoilMechanicsLibrary.UnitWeights
         /// kg/m^3
         /// </summary>
         [Description("kg/m^3")]
-        KilogramPerMeterCubed,
+        KilogramPerMeterCubed = 0,
 
         /// <summary>
         /// g/cc
         /// </summary>
         [Description("g/cc")]
-        GramPerCubicCentimeter,
+        GramPerCubicCentimeter = 1,
 
         /// <summary>
         /// lb/ft^3
         /// </summary>
         [Description("lb/ft^3")]
-        PoundPerCubicFoot,
+        PoundPerCubicFoot = 2,
     }
 }
